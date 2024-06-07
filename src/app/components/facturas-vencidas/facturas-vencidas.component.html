@@ -1,86 +1,40 @@
-<div>
-    <table>
+<div class="container">
+    <table class="table">
         <thead>
             <tr>
-                <th>
-                    <p>Nombre</p>
-                </th>
-                <th>
-                    <p>Soc.</p>
-                </th>
-                <th>
-                    <p>Factura</p>
-                </th>
-                <th>
-                    <p>Demora</p>
-                </th>
-                <th>
-                    <p>St</p>
-                </th>
-                <th>
-                    <p>Clase</p>
-                </th>
-                <th>
-                    <p>Fecha doc.</p>
-                </th>
-                <th>
-                    <p>CPag</p>
-                </th>
-                <th>
-                    <p>Importe en MD</p>
-                </th>
-                <th>
-                    <p>Moneda</p>
-                </th>
+                <th>Nombre</th>
+                <th>Soc.</th>
+                <th>Factura</th>
+                <th>Demora</th>
+                <th>St</th>
+                <th>Clase</th>
+                <th>Fecha doc.</th>
+                <th>CPag</th>
+                <th>Importe en MD</th>
+                <th>Moneda</th>
             </tr>
         </thead>
         <tbody>
             @for(factura of facturas; track factura) {
                 <tr>
-                    <td>
-                        <p>{{ factura.nombre }}</p>
-                    </td>
-                    <td>
-                        <p>{{ factura.soc }}</p>
-                    </td>
-                    <td>
-                        <p>{{ factura.factura }}</p>
-                    </td>
-                    <td>
-                        <p>{{ factura.demora }}</p>
-                    </td>
-                    <td>
-                        <p>{{ factura.st }}</p>
-                    </td>
-                    <td>
-                        <p>{{ factura.clase }}</p>
-                    </td>
-                    <td>
-                        <p>{{ factura.fechaDoc }}</p>
-                    </td>
-                    <td>
-                        <p>{{ factura.cPag }}</p>
-                    </td>
-                    <td>
-                        <p>{{ factura.importe | number:'1.2-2' }}</p>
-                    </td>
-                    <td>
-                        <p>{{ factura.moneda }}</p>
-                    </td>
+                    <td>{{ factura.nombre }}</td>
+                    <td>{{ factura.soc }}</td>
+                    <td>{{ factura.factura }}</td>
+                    <td>{{ factura.demora }}</td>
+                    <td>{{ factura.st }}</td>
+                    <td>{{ factura.clase }}</td>
+                    <td>{{ factura.fechaDoc }}</td>
+                    <td>{{ factura.cPag }}</td>
+                    <td>{{ factura.importe | number:'1.2-2' }}</td>
+                    <td>{{ factura.moneda }}</td>
                 </tr>
             }
         </tbody>
         <tfoot>
             <tr>
-                <td colspan="8" class="text-right">
-                    <strong>Total:</strong>
-                </td>
-                <td>
-                    <p>{{ getTotalImporte().total| number:'1.2-2' }}</p>
-                </td>
-                <td>
-                    <p>{{ getTotalImporte().moneda }}</p>
-                </td>
+                <td colspan="8"></td>
+                <td>{{ getTotalImporte().total| number:'1.2-2' }}</td>
+                <td>{{ getTotalImporte().moneda }}</td>
             </tr>
           </tfoot>
     </table>
